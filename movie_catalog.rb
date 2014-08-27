@@ -15,18 +15,8 @@ def db_connection
 end
 
 get '/actors' do
-    query = 'SELECT actors.name, actors.id FROM actors ORDER BY actors.name ASC LIMIT 20'
-    if params[:page].to_i > 1
-    query += 'OFFSET params[:page]- 1 * 20'
-  end
     db_connection do |conn|
     @actors = conn.exec(query)
-    all_actors = conn.exec('SELECT actors.name FROM actors')
-    @page_number = params[:page] || 1
-    last = @page_number * 2670 -1
-    first = last - 2569
-    @last_page_num = all_actors.count / 20 +1
-
   end
   erb :'/actors/index'
 end
