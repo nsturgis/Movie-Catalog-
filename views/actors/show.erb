@@ -1,0 +1,7 @@
+<h1> <%= @actor[0]["name"]%>   </h1>
+<% @actor.each do |act| %>
+
+<li>
+Movies: <%=act["title"]%> Role: <%=act["character"]%>  </li>
+<%end%>
+</ul>

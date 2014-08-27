@@ -1,0 +1,12 @@
+<h1>Movies </h1>
+
+<h4><a href = '/movies?order=year'> Filter by Year </a></h4>
+<h4><a href = '/movies?order=rating'> Filter by Rating </a></h4>
+<ul>
+<% @movies.each do |movie| %>
+<li>
+<a href='/movies/<%=movie["id"]%>'><%=movie["title"]%> </a>
+<%=movie["year"]%> <%=movie["rating"]%> <%=movie["genre"]%> <%=movie["studio"]%>
+</li>
+<%end%>
+</ul>

@@ -1,0 +1,17 @@
+<h1><%= @movie[0]["title"] %></h1>
+<ul>
+<li>Year: <%= @movie[0]["year"]%></li>
+<li>Rating: <%= @movie[0]["rating"]%></li>
+<li>Genre:  <%= @movie[0]["genre"]%></li>
+<li>Studio: <%= @movie[0]["studio"]%></li>
+<li>Synopsis: <%= @movie[0]["synopsis"]%></li>
+</ul>
+<ul>
+<% @movie.each do |row| %>
+<li>
+Actor : <a href='/actors/<%= row["id"]%>'><%= row["actors"]%></a>
+Character : <%= row["character"]%>
+</li>
+<%end%>
+</ul>
+

@@ -1,0 +1,17 @@
+<h1> ACTORS </h1>
+<ul>
+<% @actors.each do |actor| %>
+<li>
+<a href='/actors/<%=actor["id"]%>'><%=actor["name"]%></a>
+</li>
+<%end%>
+
+</ul>
+<div>
+<% if @page_number > 1 %>
+<a href = "/actors?page<%= @page_number - 1 %>"> Previous </a>
+<%end%>
+<% if @page_number < @last_page_num %>
+<a href = "/actors?page<%= @page_number + 1 %>">Next </a>
+<%end%>
+
